@@ -89,11 +89,7 @@ def main():
     images = os.listdir(path)
 
     label_csv = 'data/train_labels.csv'
-    csvee_reader = csv.reader(open(label_csv, 'r'))
-
     examples = pd.read_csv('data/train_labels.csv')
-
-    csv_reader = list(zip(csvee_reader))
 
     grouped = split(examples, 'filename')
 
@@ -102,7 +98,7 @@ def main():
         writer.write(tf_example.SerializeToString())
 
     writer.close()
-    print('Successfully created the TFRecords')
+    print('Successfully created!')
 
 main()
 
