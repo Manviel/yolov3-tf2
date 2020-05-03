@@ -1,0 +1,26 @@
+<annotation>
+	<folder>map</folder>
+	<filename>5.JPG</filename>
+	<path>D:\GitHub\yolov3-tf2\data\map\5.JPG</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>5512</width>
+		<height>4608</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>tree</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1748</xmin>
+			<ymin>4118</ymin>
+			<xmax>1920</xmax>
+			<ymax>4266</ymax>
+		</bndbox>
+	</object>
+</annotation>
