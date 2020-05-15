@@ -39,3 +39,5 @@ Test
 ```
 python detect.py --image ./images/6.jpeg --classes ./data/voc2012.names --weights ./checkpoints/yolov3_train_4.tf
 ```
+
+If has error `Paddings must be non-negative:` than add flag --yolo_max_boxes

@@ -54,12 +54,16 @@ def main(_argv):
     t2 = time.time()
     logging.info('time: {}'.format(t2 - t1))
 
-    logging.info('detections:')
+    count=0
 
     for i in range(nums[0]):
-        logging.info('\t{}, {}, {}'.format(class_names[int(classes[0][i])],
+        count +=1
+
+        logging.info('\t{}, {}, {}'.format(class_names[0],
                                         np.array(scores[0][i]),
                                         np.array(boxes[0][i])))
+
+    logging.info('detections:{}'.format(count))
 
     img = cv2.cvtColor(img_raw.numpy(), cv2.COLOR_RGB2BGR)
     img = draw_outputs(img, (boxes, scores, classes, nums), class_names)
