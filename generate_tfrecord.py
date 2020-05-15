@@ -35,7 +35,7 @@ def split(df, group):
 
 
 def class_text_to_int(row_label):
-    if row_label == 'tree':
+    if row_label == 'plant':
         return 1
     else:
         None
@@ -83,21 +83,23 @@ def create_tf_example(group, path):
     return tf_example
 
 def main():
-    writer = tf.io.TFRecordWriter('train.tfrecord')
+    for directory in ["train", "test"]:
+      writer = tf.io.TFRecordWriter('{}.tfrecord'.format(directory))
 
-    path = 'images/train'
-    images = os.listdir(path)
+      path = 'images/{}'.format(directory)
+      images = os.listdir(path)
 
-    label_csv = 'data/train_labels.csv'
-    examples = pd.read_csv('data/train_labels.csv')
+      label_csv = 'data/{}_labels.csv'.format(directory)
+      examples = pd.read_csv('data/{}_labels.csv'.format(directory))
 
-    grouped = split(examples, 'filename')
+      grouped = split(examples, 'filename')
 
-    for group in grouped:
-        tf_example = create_tf_example(group, path)
-        writer.write(tf_example.SerializeToString())
+      for group in grouped:
+          tf_example = create_tf_example(group, path)
+          writer.write(tf_example.SerializeToString())
 
-    writer.close()
+      writer.close()
+
     print('Successfully created!')
 
 main()
