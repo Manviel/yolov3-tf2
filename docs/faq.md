@@ -41,3 +41,13 @@ python detect.py --image ./images/6.jpeg --classes ./data/voc2012.names --weight
 ```
 
 If has error `Paddings must be non-negative:` than add flag --yolo_max_boxes
+
+For train max boxes = 500, for detect = 10000
+
+## Logging
+
+If you need detail inforamtion about every entry then uncomment out detect.py line 62-64
+
+## Drawing boxes
+
+if you need boxes for each discovery then uncomment out the lines detect.py line 69-71
