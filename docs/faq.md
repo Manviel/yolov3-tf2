@@ -50,4 +50,6 @@ If you need detail inforamtion about every entry then uncomment out detect.py li
 
 ## Drawing boxes
 
-if you need boxes for each discovery then uncomment out the lines detect.py line 69-71
+```
+python detect.py --image ./images/1.jpg --classes ./data/voc2012.names --weights ./checkpoints/yolov3_train_7.tf --yolo_max_boxes 100000
+```

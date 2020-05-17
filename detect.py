@@ -63,12 +63,15 @@ def main(_argv):
         #                                 np.array(scores[0][i]),
         #                                 np.array(boxes[0][i])))
 
-    logging.info('detections:{}'.format(count))
+    logging.info('Detections: {}'.format(count))
 
     img = cv2.cvtColor(img_raw.numpy(), cv2.COLOR_RGB2BGR)
-    # img = draw_outputs(img, (boxes, scores, classes, nums), class_names)
-    # cv2.imwrite(FLAGS.output, img)
-    # logging.info('output saved to: {}'.format(FLAGS.output))
+    
+    logging.info('Drawing boxes...')
+
+    img = draw_outputs(img, (boxes, scores, classes, nums), class_names)
+    cv2.imwrite(FLAGS.output, img)
+    logging.info('Output saved to: {}'.format(FLAGS.output))
 
 
 if __name__ == '__main__':
